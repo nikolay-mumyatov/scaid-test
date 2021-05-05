@@ -1,0 +1,115 @@
+@media (max-width: 768px) {
+    .main {
+        padding-bottom: 0;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .grid-item {
+        &:not(:nth-of-type(1)) {
+            flex-direction: row;
+        }
+
+        &__img {
+            width: 100%;
+            object-fit: cover;
+        }
+
+        &__description {
+            margin-top: 19px;
+            margin-left: 27px;
+        }
+
+        &__image {
+            display: block;
+        }
+
+        &__text {
+            display: block;
+        }
+
+        &--info {
+            background-color: #EFEFEF;
+
+            & h4 {
+                margin-bottom: 15px;
+                color: $contrast-color;
+            }
+        }
+    }
+
+    .grid-box {
+        grid-template-rows: 319px 309px 1fr 1fr 1fr;
+        grid-template-areas: "img img img img quotes quotes" "news news news news news news"  "block1 block1 block1 block1 block1 block1"  "block2 block2 block2 block2 block2 block2"  "block3 block3 block3 block3 block3 block3";
+    }
+}
+
+@media (max-width: 576px) {
+    .main {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .grid-box {
+        grid-template-columns: 1fr;
+        grid-template-rows: 258px 319px 516px min-content min-content min-content;
+        grid-template-areas: "img" "quotes" "news"  "block2"  "block3"  "block1";
+        grid-gap: 20px 15px;
+    }
+
+    .grid-item {
+        &__image {
+            display: none;
+        }
+
+        &__description {
+            margin-left: 22px;
+        }
+
+        &__text {
+            &:nth-of-type(1) {
+                margin-bottom: 28px;
+            }
+        }
+
+        &--quotes {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        &--news {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        &--info {
+            margin-left: 10px;
+            margin-right: 10px;
+            background-color: $block-color;
+        }
+
+        &--purchases {
+            margin-left: 10px;
+            margin-right: 10px;
+
+            & h4 {
+                font-weight: 700;
+            }
+        }
+
+        &--block3 {
+            margin-left: 10px;
+            margin-right: 10px;
+
+            & h4 {
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+@media (max-width: 360px) {
+    .grid-box {
+        grid-template-rows: 224px 319px 516px min-content min-content min-content;
+    }
+}
